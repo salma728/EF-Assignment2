@@ -16,7 +16,8 @@ public class EventHubContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseInMemoryDatabase("EventHubDatabase");
+            optionsBuilder.UseSqlServer(
+                "Server=DESKTOP-0M38JMT;Database=EventHubDB;Trusted_Connection=True;TrustServerCertificate=True;");
         }
     }
 
